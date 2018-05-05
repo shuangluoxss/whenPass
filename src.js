@@ -21,7 +21,9 @@ function changeTo(o) {
   //document.getElementById("submit").inneropenDropdown.style.background = ""HTML = "<div><button onclick=\"buttonClick()\" class=\"btn submit-btn\">预测</button></div>"
   document.getElementById("submit").style.display = "";
   document.getElementById(areaId).style.background = '#1f75cf'
+  document.getElementById(areaId).style.color =  '#fff'
   document.getElementById(tid).style.background = '#1f75cf'
+  document.getElementById(tid).style.color =  '#fff'
 }
 
 function hideList(option) {
