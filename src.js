@@ -103,7 +103,7 @@ function RANSC(pts) {
 
 function getData(page) {
   return $.ajax({
-    url: "http://api.bilibili.com/archive_rank/getarchiverankbypartion?callback=onBack&type=jsonp&tid=" + tid + "&ps=50&pn=" + page,
+    url: "https://api.bilibili.com/archive_rank/getarchiverankbypartion?callback=onBack&type=jsonp&tid=" + tid + "&ps=50&pn=" + page,
     dataType: 'jsonp',
     crossDomain: true,
     timeout: 1000,
