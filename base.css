@@ -1,5 +1,10 @@
 body {
     font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    padding: 30px 0;
+    background-image: url(https://s1.hdslb.com/bfs/static/upload/bg.b4ea.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-color: #fff;
 }
 ul {
     list-style-type: none;
@@ -10,6 +15,23 @@ ul {
 }
 li {
     float: left;
+}
+h1{
+	font-weight: normal;
+	font-family:"Microsoft YaHei", sans-serif;
+}
+h4{
+	font-weight: normal;
+	font-size: 22px;
+	font-family:"STKaiti", sans-serif;
+}
+.main{
+	background-color: white;
+    background-position: top;
+    padding: 30px 0;
+    width: 900px;
+    min-height: 400px;
+    margin: 0 auto;
 }
 .dropbtn {
 	display: block;
@@ -28,19 +50,22 @@ li {
 	cursor: pointer;
 }
 li a:hover, .dropdown:hover .dropbtn {
-    background-color: #1f75cf;
+	color: #00a1d6;
+	background: #fff;
+	border-color: #00a1d6;
 }
 li.dropdown {
     display: block;
 }
 .outline {
-    font-size: 18px;
+    font-size: 14px;
     color: #00a1d6;
 }
 .dropdown-content {
     display: none;
     position: absolute;
-    min-width: 160px;
+	z-index: 9;
+    min-width: 80px;
     background-color: white;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
@@ -54,6 +79,42 @@ li.dropdown {
     color: #222;
     cursor: pointer;
     white-space: nowrap;
+}
+.description-cover {
+	width: 100%;
+	height: 42px;
+	line-height: 40px;
+	border: 1px solid #e7e7e7;
+	border-radius: 4px;
+	background-color: #f4f5f7;
+	text-align: center;
+	font-size: 12px;
+	color: #999;
+}
+.submit-btn {
+	width: 170px;
+	height: 42px;
+	line-height: 42px;
+	background: #00a1d6;
+	color: #fff;
+	font-size: 14px;
+	display: inline-block;
+	cursor: pointer;
+	border: none;
+	border-radius: 4px;
+}
+.submit-btn:hover {
+	background: #00b5e5;
+}
+.bili-input {
+	display: inline-block;
+	width: 360px;
+	height: 40px;
+	border-radius: 4px;
+	border: 1px solid #ccd0d7;
+	font-size: 18px;
+	color: #222;
+	padding: 5px 5px 5px 12px;
 }
 .show {
     display: block;
