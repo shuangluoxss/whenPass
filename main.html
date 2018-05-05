@@ -1,219 +1,237 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
     <head>
-		<meta charset="utf-8">
-		<meta name="renderer"
-		content="webkit">
-		<meta name="viewport"
-		content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible"
-		content="IE=edge, chrome=1">
-		<meta name="spm_prefix"
-		content="333.22">
-		<title>稿件过审时间预测</title>
-		<script src="src.js"></script>
-		<link rel="stylesheet" href="base.css">
+        <meta charset="utf-8">
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="spm_prefix" content="333.22">
+        <title>稿件过审时间预测</title>
+        <link id="favicon" rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        <script src="js/jquery.min.js"> </script>
+        <script src="js/highcharts.js"></script>
+        <script src="js/src.js"></script>
+        <link rel="stylesheet" href="css/base.css">
     </head>
     <body>
-		<div style="width: 800px; margin: 0 auto">
-        <table border="0" cellpadding="0" cellspacing="0" align="center">
-            <tbody>
-                <tr>
-                   <td>
-                        <li class="dropdown">
-                            <a id="1" class="dropbtn" onclick="showList(this)">动画</a>
-                            <div class="dropdown-content" id="dropdown-1">
-                                <a id="24" onclick="changeTo(this)">MAD·AMV</a>
-                                <a id="25" onclick="changeTo(this)">MMD·3D</a>
-                                <a id="27" onclick="changeTo(this)">综合</a>
-                                <a id="47" onclick="changeTo(this)">短片·手书·配音</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="3" class="dropbtn" onclick="showList(this)">音乐</a>
-                            <div class="dropdown-content" id="dropdown-3">
-                                <a id="28" onclick="changeTo(this)">原创音乐</a>
-                                <a id="29" onclick="changeTo(this)">三次元音乐</a>
-                                <a id="30" onclick="changeTo(this)">VOCALOID·UTAU</a>
-                                <a id="31" onclick="changeTo(this)">翻唱</a>
-                                <a id="54" onclick="changeTo(this)">OP/ED/OST</a>
-                                <a id="59" onclick="changeTo(this)">演奏</a>
-                                <a id="130" onclick="changeTo(this)">音乐选集</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="4" class="dropbtn" onclick="showList(this)">游戏</a>
-                            <div class="dropdown-content" id="dropdown-4">
-                                <a id="17" onclick="changeTo(this)">单机联机</a>
-                                <a id="19" onclick="changeTo(this)">Mugen</a>
-                                <a id="65" onclick="changeTo(this)">网络游戏</a>
-                                <a id="121" onclick="changeTo(this)">GMV</a>
-                                <a id="136" onclick="changeTo(this)">音游</a>
-                                <a id="171" onclick="changeTo(this)">电子竞技</a>
-                                <a id="172" onclick="changeTo(this)">手机游戏</a>
-                                <a id="173" onclick="changeTo(this)">桌游棋牌</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="5" class="dropbtn" onclick="showList(this)">娱乐</a>
-                            <div class="dropdown-content" id="dropdown-5">
-                                <a id="71" onclick="changeTo(this)">综艺</a>
-                                <a id="131" onclick="changeTo(this)">Korea相关</a>
-                                <a id="137" onclick="changeTo(this)">明星</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="11" class="dropbtn" onclick="showList(this)">电视剧</a>
-                            <div class="dropdown-content" id="dropdown-11">
-                                <a id="185" onclick="changeTo(this)">国产剧</a>
-                                <a id="187" onclick="changeTo(this)">海外剧</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="13" class="dropbtn" onclick="showList(this)">番剧</a>
-                            <div class="dropdown-content" id="dropdown-13">
-                                <a id="32" onclick="changeTo(this)">完结动画</a>
-                                <a id="33" onclick="changeTo(this)">连载动画</a>
-                                <a id="51" onclick="changeTo(this)">资讯</a>
-                                <a id="152" onclick="changeTo(this)">官方延伸</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="23" class="dropbtn" onclick="showList(this)">电影</a>
-                            <div class="dropdown-content" id="dropdown-23">
-                                <a id="83" onclick="changeTo(this)">其他国家</a>
-                                <a id="145" onclick="changeTo(this)">欧美电影</a>
-                                <a id="146" onclick="changeTo(this)">日本电影</a>
-                                <a id="147" onclick="changeTo(this)">国产电影</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="36" class="dropbtn" onclick="showList(this)">科技</a>
-                            <div class="dropdown-content" id="dropdown-36">
-                                <a id="39" onclick="changeTo(this)">演讲· 公开课</a>
-                                <a id="95" onclick="changeTo(this)">数码</a>
-                                <a id="96" onclick="changeTo(this)">星海</a>
-                                <a id="98" onclick="changeTo(this)">机械</a>
-                                <a id="122" onclick="changeTo(this)">野生技术协会</a>
-                                <a id="124" onclick="changeTo(this)">趣味科普人文</a>
-                                <a id="176" onclick="changeTo(this)">汽车</a>
-                            </div>
-                        </li>
-                    </td>
-              </tr>
-              <tr>
-                    <td>
-                        <li class="dropdown">
-                            <a id="119" class="dropbtn" onclick="showList(this)">鬼畜</a>
-                            <div class="dropdown-content" id="dropdown-119">
-                                <a id="22" onclick="changeTo(this)">鬼畜调教</a>
-                                <a id="26" onclick="changeTo(this)">音MAD</a>
-                                <a id="126" onclick="changeTo(this)">人力VOCALOID</a>
-                                <a id="127" onclick="changeTo(this)">教程演示</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="129" class="dropbtn" onclick="showList(this)">舞蹈</a>
-                            <div class="dropdown-content" id="dropdown-129">
-                                <a id="20" onclick="changeTo(this)">宅舞</a>
-                                <a id="154" onclick="changeTo(this)">三次元舞蹈</a>
-                                <a id="156" onclick="changeTo(this)">舞蹈教程</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="155" class="dropbtn" onclick="showList(this)">时尚</a>
-                            <div class="dropdown-content" id="dropdown-155">
-                                <a id="157" onclick="changeTo(this)">美妆</a>
-                                <a id="158" onclick="changeTo(this)">服饰</a>
-                                <a id="159" onclick="changeTo(this)">资讯</a>
-                                <a id="164" onclick="changeTo(this)">健身</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="160" class="dropbtn" onclick="showList(this)">生活</a>
-                            <div class="dropdown-content" id="dropdown-160">
-                                <a id="21" onclick="changeTo(this)">日常</a>
-                                <a id="75" onclick="changeTo(this)">动物圈</a>
-                                <a id="76" onclick="changeTo(this)">美食圈</a>
-                                <a id="138" onclick="changeTo(this)">搞笑</a>
-                                <a id="161" onclick="changeTo(this)">手工</a>
-                                <a id="162" onclick="changeTo(this)">绘画</a>
-                                <a id="163" onclick="changeTo(this)">运动</a>
-                                <a id="174" onclick="changeTo(this)">其他</a>
-                                <a id="175" onclick="changeTo(this)">ASMR</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="165" class="dropbtn" onclick="showList(this)">广告</a>
-                            <div class="dropdown-content" id="dropdown-165">
-                                <a id="166" onclick="changeTo(this)">广告</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="167" class="dropbtn" onclick="showList(this)">国创</a>
-                            <div class="dropdown-content" id="dropdown-167">
-                                <a id="153" onclick="changeTo(this)">国产动画</a>
-                                <a id="168" onclick="changeTo(this)">国产原创相关</a>
-                                <a id="169" onclick="changeTo(this)">布袋戏</a>
-                                <a id="170" onclick="changeTo(this)">资讯</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="177" class="dropbtn" onclick="showList(this)">纪录片</a>
-                            <div class="dropdown-content" id="dropdown-177">
-                                <a id="37" onclick="changeTo(this)">人文·历史</a>
-                                <a id="178" onclick="changeTo(this)">科学·探索·自然</a>
-                                <a id="179" onclick="changeTo(this)">军事</a>
-                                <a id="180" onclick="changeTo(this)">社会·美食·旅行</a>
-                            </div>
-                        </li>
-                    </td>
-                    <td>
-                        <li class="dropdown">
-                            <a id="181" class="dropbtn" onclick="showList(this)">影视</a>
-                            <div class="dropdown-content" id="dropdown-181">
-                                <a id="85" onclick="changeTo(this)">短片</a>
-                                <a id="86" onclick="changeTo(this)">特摄</a>
-                                <a id="182" onclick="changeTo(this)">影视杂谈</a>
-                                <a id="183" onclick="changeTo(this)">影视剪辑</a>
-                                <a id="184" onclick="changeTo(this)">预告·资讯</a>
-                            </div>
-                        </li>
-                    </td>
-              	</tr>
-            </tbody>
-        </table>
-		<p id="demo">您当前选择的分区是：
-          <span id="type-hint" class="outline">
-              动画 → MAD·AMV
-          </span>
-      	</p>
-		</div>
+        <div id="app" class="main">
+            <div style="width: 850px; margin: 0 auto">
+                <h1 align="center">bilibili稿件过审时间预测工具</h1>
+                <p style="font-size: 22px">请选择分区：</p>
+                <table border="0" cellpadding="0" cellspacing="0" align="center" >
+                    <tbody>
+                        <tr>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="1" class="dropbtn" onclick="showList(this)">动画</a>
+                                    <div class="dropdown-content" id="dropdown-1">
+                                        <a id="24" onclick="changeTo(this)">MAD·AMV</a>
+                                        <a id="25" onclick="changeTo(this)">MMD·3D</a>
+                                        <a id="27" onclick="changeTo(this)">综合</a>
+                                        <a id="47" onclick="changeTo(this)">短片·手书·配音</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="3" class="dropbtn" onclick="showList(this)">音乐</a>
+                                    <div class="dropdown-content" id="dropdown-3">
+                                        <a id="28" onclick="changeTo(this)">原创音乐</a>
+                                        <a id="29" onclick="changeTo(this)">三次元音乐</a>
+                                        <a id="30" onclick="changeTo(this)">VOCALOID·UTAU</a>
+                                        <a id="31" onclick="changeTo(this)">翻唱</a>
+                                        <a id="54" onclick="changeTo(this)">OP/ED/OST</a>
+                                        <a id="59" onclick="changeTo(this)">演奏</a>
+                                        <a id="130" onclick="changeTo(this)">音乐选集</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="4" class="dropbtn" onclick="showList(this)">游戏</a>
+                                    <div class="dropdown-content" id="dropdown-4">
+                                        <a id="17" onclick="changeTo(this)">单机联机</a>
+                                        <a id="19" onclick="changeTo(this)">Mugen</a>
+                                        <a id="65" onclick="changeTo(this)">网络游戏</a>
+                                        <a id="121" onclick="changeTo(this)">GMV</a>
+                                        <a id="136" onclick="changeTo(this)">音游</a>
+                                        <a id="171" onclick="changeTo(this)">电子竞技</a>
+                                        <a id="172" onclick="changeTo(this)">手机游戏</a>
+                                        <a id="173" onclick="changeTo(this)">桌游棋牌</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="5" class="dropbtn" onclick="showList(this)">娱乐</a>
+                                    <div class="dropdown-content" id="dropdown-5">
+                                        <a id="71" onclick="changeTo(this)">综艺</a>
+                                        <a id="131" onclick="changeTo(this)">Korea相关</a>
+                                        <a id="137" onclick="changeTo(this)">明星</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="11" class="dropbtn" onclick="showList(this)">电视剧</a>
+                                    <div class="dropdown-content" id="dropdown-11">
+                                        <a id="185" onclick="changeTo(this)">国产剧</a>
+                                        <a id="187" onclick="changeTo(this)">海外剧</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="13" class="dropbtn" onclick="showList(this)">番剧</a>
+                                    <div class="dropdown-content" id="dropdown-13">
+                                        <a id="32" onclick="changeTo(this)">完结动画</a>
+                                        <a id="33" onclick="changeTo(this)">连载动画</a>
+                                        <a id="51" onclick="changeTo(this)">资讯</a>
+                                        <a id="152" onclick="changeTo(this)">官方延伸</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="23" class="dropbtn" onclick="showList(this)">电影</a>
+                                    <div class="dropdown-content" id="dropdown-23">
+                                        <a id="83" onclick="changeTo(this)">其他国家</a>
+                                        <a id="145" onclick="changeTo(this)">欧美电影</a>
+                                        <a id="146" onclick="changeTo(this)">日本电影</a>
+                                        <a id="147" onclick="changeTo(this)">国产电影</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="36" class="dropbtn" onclick="showList(this)">科技</a>
+                                    <div class="dropdown-content" id="dropdown-36">
+                                        <a id="39" onclick="changeTo(this)">演讲· 公开课</a>
+                                        <a id="95" onclick="changeTo(this)">数码</a>
+                                        <a id="96" onclick="changeTo(this)">星海</a>
+                                        <a id="98" onclick="changeTo(this)">机械</a>
+                                        <a id="122" onclick="changeTo(this)">野生技术协会</a>
+                                        <a id="124" onclick="changeTo(this)">趣味科普人文</a>
+                                        <a id="176" onclick="changeTo(this)">汽车</a>
+                                    </div>
+                                </li>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="119" class="dropbtn" onclick="showList(this)">鬼畜</a>
+                                    <div class="dropdown-content" id="dropdown-119">
+                                        <a id="22" onclick="changeTo(this)">鬼畜调教</a>
+                                        <a id="26" onclick="changeTo(this)">音MAD</a>
+                                        <a id="126" onclick="changeTo(this)">人力VOCALOID</a>
+                                        <a id="127" onclick="changeTo(this)">教程演示</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="129" class="dropbtn" onclick="showList(this)">舞蹈</a>
+                                    <div class="dropdown-content" id="dropdown-129">
+                                        <a id="20" onclick="changeTo(this)">宅舞</a>
+                                        <a id="154" onclick="changeTo(this)">三次元舞蹈</a>
+                                        <a id="156" onclick="changeTo(this)">舞蹈教程</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="155" class="dropbtn" onclick="showList(this)">时尚</a>
+                                    <div class="dropdown-content" id="dropdown-155">
+                                        <a id="157" onclick="changeTo(this)">美妆</a>
+                                        <a id="158" onclick="changeTo(this)">服饰</a>
+                                        <a id="159" onclick="changeTo(this)">资讯</a>
+                                        <a id="164" onclick="changeTo(this)">健身</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="160" class="dropbtn" onclick="showList(this)">生活</a>
+                                    <div class="dropdown-content" id="dropdown-160">
+                                        <a id="21" onclick="changeTo(this)">日常</a>
+                                        <a id="75" onclick="changeTo(this)">动物圈</a>
+                                        <a id="76" onclick="changeTo(this)">美食圈</a>
+                                        <a id="138" onclick="changeTo(this)">搞笑</a>
+                                        <a id="161" onclick="changeTo(this)">手工</a>
+                                        <a id="162" onclick="changeTo(this)">绘画</a>
+                                        <a id="163" onclick="changeTo(this)">运动</a>
+                                        <a id="174" onclick="changeTo(this)">其他</a>
+                                        <a id="175" onclick="changeTo(this)">ASMR</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="165" class="dropbtn" onclick="showList(this)">广告</a>
+                                    <div class="dropdown-content" id="dropdown-165">
+                                        <a id="166" onclick="changeTo(this)">广告</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="167" class="dropbtn" onclick="showList(this)">国创</a>
+                                    <div class="dropdown-content" id="dropdown-167">
+                                        <a id="153" onclick="changeTo(this)">国产动画</a>
+                                        <a id="168" onclick="changeTo(this)">国产原创相关</a>
+                                        <a id="169" onclick="changeTo(this)">布袋戏</a>
+                                        <a id="170" onclick="changeTo(this)">资讯</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="177" class="dropbtn" onclick="showList(this)">纪录片</a>
+                                    <div class="dropdown-content" id="dropdown-177">
+                                        <a id="37" onclick="changeTo(this)">人文·历史</a>
+                                        <a id="178" onclick="changeTo(this)">科学·探索·自然</a>
+                                        <a id="179" onclick="changeTo(this)">军事</a>
+                                        <a id="180" onclick="changeTo(this)">社会·美食·旅行</a>
+                                    </div>
+                                </li>
+                            </td>
+                            <td>
+                                <li class="dropdown">
+                                    <a id="181" class="dropbtn" onclick="showList(this)">影视</a>
+                                    <div class="dropdown-content" id="dropdown-181">
+                                        <a id="85" onclick="changeTo(this)">短片</a>
+                                        <a id="86" onclick="changeTo(this)">特摄</a>
+                                        <a id="182" onclick="changeTo(this)">影视杂谈</a>
+                                        <a id="183" onclick="changeTo(this)">影视剪辑</a>
+                                        <a id="184" onclick="changeTo(this)">预告·资讯</a>
+                                    </div>
+                                </li>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="font-size: 14px">您当前选择的分区是：
+                    <span id="type-hint" class="outline">
+                        未选择
+                    </span>
+                </p>
+                <div id="submit" style="display: none">
+                    <div id="menu" style="width:600px;float:left;">
+                        <p>
+                            请输入稿件aid：
+                            <input id="aid" placeholder="aid即稿件av号，如av10492则输入10492" maxlength="20" class="bili-input" type="text">
+                        </p>
+                    </div>
+                    <div id="content" style="float:right;">
+                        <p>
+                            <button class="btn submit-btn" align="right" onclick="buttonClick()">预测</button>
+                        </p>
+                    </div>
+                    <p id="prediction" style="float:left;">
+                    </p>
+                </div>
+            <div id="container" style="width: 800px; margin: 0 auto; z-Index:0"></div>
+        </div>
     </body>
-</html>
+    </html>
