@@ -10,7 +10,7 @@ function showList(o) {
 }
 
 function changeTo(o) {
-  if (areaId != ''){
+  if (areaId != '') {
     document.getElementById(areaId).style.background = ''
     document.getElementById(areaId).style.color = ''
     document.getElementById(tid).style.background = ''
@@ -23,9 +23,9 @@ function changeTo(o) {
   //document.getElementById("submit").inneropenDropdown.style.background = ""HTML = "<div><button onclick=\"buttonClick()\" class=\"btn submit-btn\">预测</button></div>"
   document.getElementById("submit").style.display = "";
   document.getElementById(areaId).style.background = '#1f75cf'
-  document.getElementById(areaId).style.color =  '#fff'
+  document.getElementById(areaId).style.color = '#fff'
   document.getElementById(tid).style.background = '#1f75cf'
-  document.getElementById(tid).style.color =  '#fff'
+  document.getElementById(tid).style.color = '#fff'
 }
 
 function hideList(option) {
@@ -88,8 +88,7 @@ function RANSC(pts) {
         var currentError = currentModel.getError(pts[k][0], pts[k][1])
         if (currentError < threshold) {
           currentScore += currentError
-        }
-        else {
+        } else {
           currentScore += Math.sqrt(currentError * threshold)
         }
       }
@@ -107,7 +106,7 @@ function getData(page) {
     url: "http://api.bilibili.com/archive_rank/getarchiverankbypartion?callback=onBack&type=jsonp&tid=" + tid + "&ps=50&pn=" + page,
     dataType: 'jsonp',
     crossDomain: true,
-    timeout : 1000,
+    timeout: 1000,
     type: "get"
   })
 }
@@ -135,7 +134,7 @@ function buttonClick() {
       if (prediction > line[1][0]) {
         line[1] = [prediction, aid]
       }
-      document.getElementById("prediction").innerHTML = 
+      document.getElementById("prediction").innerHTML =
         '您的投稿 <font color="blue"><b>av{0}</b></font> 预计于 <font color="red"><b>{1}</b></font> 过审'.format(aid, Highcharts.dateFormat('%y-%m-%d %H:%M', prediction))
       Highcharts.chart('container', {
         title: {
@@ -186,10 +185,10 @@ function buttonClick() {
           name: '实际',
           color: 'red',
           type: 'scatter',
-          events: { 
-              click: function(e) { 
-                  window.open("https://www.bilibili.com/video/av" + e.point.y); 
-              } 
+          events: {
+            click: function(e) {
+              window.open("https://www.bilibili.com/video/av" + e.point.y);
+            }
           },
           data: dat
         }, {
