@@ -12,7 +12,9 @@ function showList(o) {
 function changeTo(o) {
   if (areaId != ''){
     document.getElementById(areaId).style.background = ''
+    document.getElementById(areaId).style.color = ''
     document.getElementById(tid).style.background = ''
+    document.getElementById(areaId).style.color = ''
   }
   areaId = o.parentNode.id.replace(/[^0-9]/ig, "")
   areaName = document.getElementById(areaId).innerHTML + " → " + o.innerHTML
