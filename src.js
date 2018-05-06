@@ -112,7 +112,7 @@ function getData(page) {
 }
 
 function buttonClick() {
-  $.when(getData(1), getData(2), getData(3), getData(4))
+  $.when(getData(1), getData(2))
     .done(function() {
       dat = []
       for (k = 0; k < arguments.length; ++k) {
