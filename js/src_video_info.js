@@ -37,11 +37,11 @@ function getData(aid) {
 				text: 'up主：{0}<span style="font-size:16px; color:#ffffff">.....</span>投稿日期：{1}'.format(info[5], info[3])
 			},
 			xAxis: {
-              min: dat[0][0],
-              max: dat[dat.length - 1][0],
-              type: 'datetime',
-              minTickInterval: 600,
-			  gridLineWidth: 1,
+			      //min: dat[0][0],
+			      //max: dat[dat.length - 1][0],
+			      type: 'datetime',
+			      minTickInterval: 600,
+			      gridLineWidth: 1,
 			  labels: {		          
 					formatter: function () {						
 						return Highcharts.dateFormat('%H:%M<br/>%y/%m/%d',this.value); 						
