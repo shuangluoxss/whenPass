@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="renderer" content="webkit">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <meta name="spm_prefix" content="333.22">
+        <title>稿件数据查询</title>
+        <link id="favicon" rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+        <script src="js/jquery.min.js"> </script>
+        <script src="js/highcharts.js"></script>
+        <script src="js/src_video_info.js"></script>
+        <link rel="stylesheet" href="css/base.css">
+		
+    </head>
+    <body>
+        <div id="app" class="main">
+            <div style="width: 850px; margin: 0 auto">
+                <h1 align="center">bilibili稿件数据查询工具</h1>
+				<p style="font-size:16px">
+				说明：
+				<br>&emsp;&emsp;目前仅支持<span style="color:#FF0000;font-weight:bold;">演奏区</span>的<span style="color:#FF0000;font-weight:bold;">口琴相关</span>稿件。
+				且由于服务器性能限制，每次最多返回<span style="color:#FF0000;font-weight:bold;">5000</span>个数据点
+				<br>&emsp;&emsp;服务器中仅包含<span style="color:#FF0000;font-weight:bold;">2018-07-15</span>之后的数据，更早的数据暂时无法获得
+				<br>&emsp;&emsp;查询后点击标题可跳转至视频页面，点击右侧项可开关数据显示
+				<br>&emsp;&emsp;更多功能正在开发中，有意见或建议欢迎联系@霜落xss反馈~
+                <div id="submit">
+                    <div id="menu" style="width:600px;float:left;">
+                        <p>
+                            请输入稿件aid：
+                            <input id="aid" placeholder="aid即稿件av号，如av30684447则输入30684447" maxlength="20" class="bili-input" type="text">
+                        </p>
+                    </div>
+                    <div id="content" style="float:right;">
+                        <p>
+                            <button class="btn submit-btn" align="right" onclick="buttonClick()">查询</button>
+                        </p>
+                    </div>
+                    <p id="prediction" style="float:left;">
+                    </p>
+                </div>
+            <div id="container" style="width: 800px; margin: 0 auto; z-Index:0"></div>
+        </div>
+    </body>
+</html>
