@@ -4,7 +4,7 @@ Highcharts.setOptions({
     useUTC: false
   }
 });
-Highcharts.dateFormat('%m-%d<br/>%H:%M')
+Highcharts.dateFormat('%H:%M<br/>%y/%m/%d')
 
 function getData(aid) {
   resp = $.getJSON(
@@ -17,6 +17,7 @@ function getData(aid) {
 				return
 		  }
 		  dat = result['data']
+		  dat.sort()
 		  //document.getElementById("prediction").innerHTML = info
 		  Highcharts.chart('container', {
 			chart: {
@@ -40,10 +41,12 @@ function getData(aid) {
               max: dat[dat.length - 1][0],
               type: 'datetime',
               minTickInterval: 600,
-              dateTimeLabelFormats: {
-                day: '%H:%M<br/>%y/%m/%d'
-              },
-				gridLineWidth: 1
+			  gridLineWidth: 1,
+			  labels: {		          
+					formatter: function () {						
+						return Highcharts.dateFormat('%H:%M<br/>%y/%m/%d',this.value); 						
+					}
+				}
             },
 			yAxis: [{ // Primary yAxis
 				title: {
