@@ -8,7 +8,7 @@ Highcharts.dateFormat('%H:%M<br/>%y/%m/%d')
 
 function getData(aid) {
   resp = $.getJSON(
-    "https://www.wuyingddg.cn/get_video_info/" + aid,
+    "https://www.shuangluoxss.ml/get_video_info/" + aid,
 	function(result, status){
 		if (status == "success") {
 		  info = result['video_info']
