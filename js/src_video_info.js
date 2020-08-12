@@ -163,6 +163,12 @@ function getCol(matrix, col){
     return result;
   }
 function buttonClick() {
-  var aid = Number(document.getElementById("aid").value.match(/av(\d+)/g)[0].slice(2))
+  var aid_str = document.getElementById("aid").value
+  if (aid_str.indexOf("BV") != -1) {
+    var aid = aid_str.match(/BV(\d\w+)/g)[0]
+  }
+  else{
+    var aid = document.getElementById("aid").value.match(/av(\d+)/g)[0].slice(2)
+  }
   getData(aid)
 }
