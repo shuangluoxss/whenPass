@@ -8,7 +8,7 @@ Highcharts.dateFormat('%H:%M<br/>%y/%m/%d')
 
 function getData(mid) {
   resp = $.getJSON(
-    "https://www.wuyingddg.cn/get_up_fans/" + mid,
+    "http://152.136.139.202/api/get_up_fans/" + mid,
 	function(result, status){
 		if (status == "success") {
 		  up_name = result['up_name']
